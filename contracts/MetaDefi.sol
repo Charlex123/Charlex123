@@ -1,10 +1,4 @@
-/**
- *Submitted for verification at BscScan.com on 2021-02-12
-*/
-
-// FEG on BSC for all the gorillas that wanted cheap transfers and swaps! 
-
-// SPDX-License-Identifier: Unlicensed
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.10;
 
@@ -164,32 +158,32 @@ library SafeMath {
     }
 
     /**
-     * @dev Returns the integer division of two unsigned integers. Reverts on
+     * Returns the integer division of two unsigned integers. Reverts on
      * division by zero. The result is rounded towards zero.
      *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * Counterpart to Solidity's `/` operator. this function uses a
      * `revert` opcode (which leaves remaining gas untouched) while Solidity
      * uses an invalid opcode to revert (consuming all remaining gas).
      *
      * Requirements:
      *
-     * - The divisor cannot be zero.
+     *  The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
         return div(a, b, "SafeMath: division by zero");
     }
 
     /**
-     * @dev Returns the integer division of two unsigned integers. Reverts with custom message on
+     * Returns the integer division of two unsigned integers. Reverts with custom message on
      * division by zero. The result is rounded towards zero.
      *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
+     * Counterpart to Solidity's `/` operator: this function uses a
      * `revert` opcode (which leaves remaining gas untouched) while Solidity
      * uses an invalid opcode to revert (consuming all remaining gas).
      *
      * Requirements:
      *
-     * - The divisor cannot be zero.
+     * The divisor cannot be zero.
      */
     function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
         require(b > 0, errorMessage);
@@ -200,7 +194,7 @@ library SafeMath {
     }
 
     /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * Reverts when dividing by zero.
      *
      * Counterpart to Solidity's `%` operator. This function uses a `revert`
@@ -209,14 +203,14 @@ library SafeMath {
      *
      * Requirements:
      *
-     * - The divisor cannot be zero.
+     * The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b) internal pure returns (uint256) {
         return mod(a, b, "SafeMath: modulo by zero");
     }
 
     /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
+     * Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
      * Reverts with custom message when dividing by zero.
      *
      * Counterpart to Solidity's `%` operator. This function uses a `revert`
@@ -225,7 +219,7 @@ library SafeMath {
      *
      * Requirements:
      *
-     * - The divisor cannot be zero.
+     *  The divisor cannot be zero.
      */
     function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
         require(b != 0, errorMessage);
@@ -676,7 +670,7 @@ contract MetaDefi is Context, IERC20, Ownable, Stakeable {
     mapping(address => bool) private _isFeeless;
 
     uint256 private constant MAX = ~uint256(0);
-    uint256 private constant _tTotal = 500 * (10 ** 6) * (10 ** 9);
+    uint256 private constant _tTotal = 500 * (10 ** 6) * (10**9);
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
     uint256 private _tFeePercent = 2;
