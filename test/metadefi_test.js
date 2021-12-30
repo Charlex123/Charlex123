@@ -41,11 +41,11 @@ it("transfering tokens", async() => {
 
 
     // Try transfering too much
-    try {
-        await MetadefiToken.transfer(accounts[2], 200000, { from:accounts[1]});
-    }catch(error){
-        assert.equal(error.reason, "MetadefiToken: cant transfer more than your account holds");
-    }
+    // try {
+    //     await MetadefiToken.transfer(accounts[2], 200000, { from:accounts[1]});
+    // }catch(error){
+    //     assert.equal(error.reason, "MetadefiToken: cant transfer more than your account holds");
+    // }
    
 })
 } )
