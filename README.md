@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Charlex123
-- 👀 I’m interested in web and blockchain development
+- 👀 I’m an advanced web and blockchain development
 - 🌱 I’m currently learning advanced python and machine learning
 - 💞️ I’m looking to collaborate on real world blockchain Dapps and development
 - 📫 How to reach me charlesmuoka1@gmail.com
