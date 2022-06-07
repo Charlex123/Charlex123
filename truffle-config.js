@@ -18,10 +18,13 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 //
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+// require('dotenv').config();
+// const HDWalletProvider = require("truffle-hdwallet-provider");
 
 module.exports = {
   /**
@@ -57,14 +60,32 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-    // ropsten: {
-    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
-    // network_id: 3,       // Ropsten's id
-    // gas: 5500000,        // Ropsten has a lower block limit than mainnet
-    // confirmations: 2,    // # of confs to wait between deployments. (default: 0)
-    // timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-    // skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
-    // },
+    ropsten: {
+    // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/8909fc4e39824c8b938df14a2e2a27b1`),
+    provider: new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/8909fc4e39824c8b938df14a2e2a27b1`),
+    network_id: 3,       // Ropsten's id
+    gas: 5500000,        // Ropsten has a lower block limit than mainnet
+    confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+    networkCheckTimeout: 10000,
+    timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+    skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    },
+      testnet: {
+          networkCheckTimeout: 10000, 
+          provider: () => new HDWalletProvider(mnemonic, `https://data-seed-prebsc-1-s1.binance.org:8545/`),
+          network_id: 97,
+          confirmations: 10,
+          gas: 5500000,
+          timeoutBlocks: 200,
+          skipDryRun: true
+        },
+        // bsc: {
+        //   provider: () => new HDWalletProvider(mnemonic, `wss://bsc-dataseed1.binance.org`),
+        //   network_id: 56,
+        //   confirmations: 10,
+        //   timeoutBlocks: 200,
+        //   skipDryRun: true
+        // },
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
